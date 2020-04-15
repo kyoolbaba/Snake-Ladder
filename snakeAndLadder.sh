@@ -1,5 +1,5 @@
 #! /bin/bash
-playerPosition=0
+declare playerPosition=0
 declare DESTINATION=100
 
 play(){
@@ -11,6 +11,10 @@ play(){
   dice=$((RANDOM%6 +1))
   option=$((RANDOM%3 -1))
   playerPosition=$(( playerPosition + (dice * option)))
+   if [[ $playerPosition -ge '101' ]]; then
+    ((count--))
+    playerPosition=$((playerPosition - dice))
+  fi 
   done
 }
 
