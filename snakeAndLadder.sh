@@ -23,7 +23,6 @@ playdicegame(){
          ((count++))
              for (( i = 1 ; i < $((NO_OF_PLAYERS+1)) ; i++  )); do 
                  player=Player$i
-                 echo from $player  $player $player $player 
                  playerPlace=${playerPosition[$player]}
                  rolldice 
                  playerPosition[Player$i]=$playerPlace 
